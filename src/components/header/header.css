@@ -1,0 +1,85 @@
+/* ===== Header Container ===== */
+.cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(10, 10, 20, 0.85);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  /* Animation: slide down on load */
+  animation: headerSlide 1.2s ease-out both;
+}
+
+@keyframes headerSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Title ===== */
+.cont span {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #00d9ff;
+  text-shadow: 0 0 12px rgba(0, 217, 255, 0.8);
+  letter-spacing: 2px;
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+  0%   { text-shadow: 0 0 8px rgba(0,217,255,0.6); }
+  50%  { text-shadow: 0 0 20px rgba(0,217,255,1); }
+  100% { text-shadow: 0 0 8px rgba(0,217,255,0.6); }
+}
+
+/* ===== Nav List ===== */
+.list ul {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+
+.list li {
+  cursor: pointer;
+  padding: 6px 8px;
+  font-size: 1rem;
+  color: #e0e6ed;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline animation */
+.list li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #00d9ff;
+  box-shadow: 0 0 8px rgba(0,217,255,0.8);
+  transition: width 0.4s ease;
+}
+
+.list li:hover {
+  color: #00d9ff;
+}
+
+.list li:hover::after {
+  width: 100%;
+}
