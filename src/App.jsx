@@ -4,7 +4,8 @@ import Layout from "./components/layout/Layout";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/StellarView">
+      <Header />
       <Routes>
         <Route path="/" element={<Layout />} />
         <Route path="/apod" element={<Layout section="apod" />} />

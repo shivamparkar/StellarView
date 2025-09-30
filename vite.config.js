@@ -1,9 +1,9 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],   // <-- use the plugin here
+  plugins: [react()],
+  base: '/StellarView/',   // 👈 note the trailing slash
   server: {
     proxy: {
       '/nasa-exoplanet': {
@@ -13,4 +13,4 @@ export default defineConfig({
       }
     }
   }
-});
+})
